@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h3 id="allinmdplayer-">AllinmdPlayer 播放器插件文档</h3>
+<h6 id="-br-2017-04-20">作者：姚乔 <br/> 创建时间：2017/04/20</h6>
+<h6 id="-h5-2017-04-27">更新：添加 H5 页面使用说明 --姚乔--2017/04/27</h6>
+<h6 id="-allinmdhotkeys-pc-2017-06-07">更新：添加 AllinmdHotKeys 插件，实现 PC 端键盘方向键和空格键的响应处理 --姚乔--2017/06/07</h6>
+<h6 id="-videojsspeedswitcher-2018-06-20">更新：添加 videoJsSpeedSwitcher 插件，实现播放器倍速切换 --姚乔--2018/06/20</h6>
+<h6 id="-videojs-contrib-hls-2018-06-21">更新：添加 videojs-contrib-hls 插件，实现播放器切片播放 --姚乔--2018/06/21</h6>
+<h2 id="-">目录</h2>
+<ul>
+<li><a href="#简介">简介</a></li><li><a href="#主要功能">主要功能</a></li><li><a href="#使用方法">使用方法</a><ul>
+<li><a href="#注意事项">注意事项</a></li><li><a href="#引入文件">引入文件</a></li><li><a href="#HTML编码">HTML编码</a></li><li><a href="#JS调用">JS调用</a></li><li><a href="#插件使用">插件使用</a><ul>
+<li><a href="#倍速切换插件">倍速切换插件</a></li><li><a href="#清晰度切换插件">清晰度切换插件</a></li><li><a href="#锚点提示插件">锚点提示插件</a></li><li><a href="#切片播放插件">hls协议的m3u8切片播放插件</a></li></ul>
+</li><li><a href="#配置说明">配置说明</a><ul>
+<li><a href="#选项">选项</a></li><li><a href="#常用方法">常用方法</a></li><li><a href="#属性值">属性值</a></li><li><a href="#事件">事件</a></li></ul>
+</li></ul>
+</li><li><a href="#建议">建议</a><ul>
+<li><a href="#PC项目">PC项目</a></li><li><a href="#H5项目">H5项目</a></li><li><a href="#关于源码">关于源码</a></li></ul>
+</li></ul>
+<h2 id="简介">简介</h2><br>videojs.allinmd.js是一个基于videojs的播放器插件，它能够满足播放器的常用功能，并实现了一些定制化功能，同时保证了PC场景下支持IE8+。<br><br><h2 id="主要功能">主要功能</h2><br><em> 基本的播放、暂停、进度条拖拽快进、全屏、静音
+</em> 获取当前播放时长、播放总时长<br><em> 获取当前播放状态
+</em> 获取当前全屏状态<br><em> 监听全屏变化事件
+</em> 主动进入/退出全屏（需要使用用户响应事件，如鼠标事件、键盘事件，且不可程序模拟）<br><em> 设置可播放时长权限判断，可监听相关自定义事件
+</em> 设置自定义弹窗层<br><em> 设置关键进度点显示
+</em> 设置视频清晰度切换<br><em> 设置进度条禁止拖拽，可监听相关自定义事件
+</em> 设置播放前海报<br><br><h2 id="使用方法">使用方法</h2>
+
+<h4 id="注意事项">注意事项</h4>
+
+<ul>
+<li>需要保证font文件在项目文件中</li><li><p>确保PC项目中html文件中<head>标签下添加，<strong>务必加载&#39;\<meta charset="UTF-8"\>&#39;之后</strong></p>
+<pre><code>  &lt;!--需要在使用AllinmdPlayer的页面加入此标签，防止IE8自动进入兼容模式，很多JS方法会不被支持--&gt;
+  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+</code></pre></li><li><p>确保html中已引入相关的jQuery.js文件</p>
+</li><li>确保PC项目中兼容IE8时，<strong>需要将引入&quot;ie8/videojs-ie8.min.js&quot;脚本放在引入&quot;js/common/comm.func.js&quot;或其相关压缩文件之前</strong>，否则会导致两者在对IE8相关的JS方法扩充时发生冲突</li><li><p>确保整个项目不会出现类似以下的代码，避免AllinmdPlayer对象被覆盖</p>
+<pre><code>   window.AllinmdPlayer = anyObject; 
+</code></pre></li></ul>
+<h4 id="引入文件">引入文件</h4>
+
+<ul>
+<li>需要确保已引入jQuery文件</li><li><p>PC项目需要引入的AllinmdPlayer相关的文件</p>
+<pre><code>  &lt;!--videojs相关样式--&gt;
+  &lt;link href=&quot;video-js.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;/&gt;
+  &lt;!--allinmdplayer相关样式--&gt;
+  &lt;link href=&quot;css/videojs.allinmd.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;/&gt;
+  &lt;!--为保证IE8下正常使用，需要引入--&gt;
+  &lt;script type=&quot;text/javascript&quot; src=&quot;ie8/videojs-ie8.min.js&quot;&gt;&lt;/script&gt;
+  &lt;!--修改过的videojs文件--&gt;
+  &lt;script type=&quot;text/javascript&quot; src=&quot;video.js&quot;&gt;&lt;/script&gt;
+  &lt;!--allinmdplayer逻辑代码--&gt;
+  &lt;script type=&quot;text/javascript&quot; src=&quot;videojs.allinmd.js&quot;&gt;&lt;/script&gt;
+</code></pre></li><li><p>H5项目需要引入的AllinmdPlayer相关文件</p>
+<pre><code>  &lt;!--videojs相关样式--&gt;
+  &lt;link href=&quot;video-js.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;/&gt;
+  &lt;!--allinmdplayer相关样式--&gt;
+  &lt;link href=&quot;css/videojs.allinmd-h5.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;/&gt;
+  &lt;!--修改过的videojs文件--&gt;
+  &lt;script type=&quot;text/javascript&quot; src=&quot;video.js&quot;&gt;&lt;/script&gt;
+  &lt;!--allinmdplayer逻辑代码--&gt;
+  &lt;script type=&quot;text/javascript&quot; src=&quot;videojs.allinmd.js&quot;&gt;&lt;/script&gt;
+</code></pre></li></ul>
+<h4 id="HTML编码">HTML编码</h4>
+
+<ul>
+<li>务必保证class中至少存在&quot;video-js vjs-default-skin vjs-no-flex&quot;三个类名</li><li>其中&quot;vjs-big-play-centered&quot;是将播放按钮居中</li><li><p>oncontextmenu=&quot;return true&quot;当返回值设为false时，可以屏蔽用户对于video标签的右键菜单操作</p>
+<pre><code>  &lt;video id=&quot;example_video_2&quot; class=&quot;video-js vjs-default-skin vjs-no-flex vjs-big-play-centered&quot; oncontextmenu=&quot;return true&quot;&gt;
+  &lt;/video&gt;
+</code></pre></li></ul>
+<p><h4 id="JS调用">JS调用</h4><br>在实例化AllinmdPlayer对象时，需要传入至少一个参数，即video标签中的id,其余参数都为可选参数。</p>
+<pre><code>var player2 = new AllinmdPlayer(&#39;example_video_2&#39;, {
+    width:640,
+    height:264,
+    controls:true,
+    //播放之前需要放置的海报图片
+    poster:&quot;//vjs.zencdn.net/v/oceans.png&quot;, 
+    //IE8下使用的swf地址
+    flash: {
+        swf:&#39;allinmdplayer.swf&#39;               
+    }, //需要使用的插件，倍速切换（videoJsSpeedSwitcher），清晰度切换(videoJsResolutionSwitcher)，关键点显示(progress)                                
+    plugins: {
+        videoJsSpeedSwitcher: {
+            menuLabel: &#39;倍速&#39;,
+            menuItems: [{label: &#39;1.0X&#39;, rate: 1}, {label: &#39;1.5X&#39;, rate: 1.5},{label: &#39;2.0X&#39;, rate: 2.0}]
+        },        
+        videoJsResolutionSwitcher:{&quot;default&quot;: &#39;high&#39;, dynamicLabel: &quot;true&quot;},
+        progress:[
+            {
+                time: 9,
+                text:&#39;这里输入你想要的信息&#39;
+            },
+            {
+                time: 16,
+                text:&#39;可以为锚点输入信息&#39;
+            },
+            {
+                time: 23,
+                text:&#39;如果没有，则会显示 undefined&#39;
+            },
+            {
+                time: 28
+            },
+            {
+                time: 47,
+                text:&#39;看到不写的下场了吗&#39;
+            }                
+        ]
+    },//设置播放权限时间，使用时需保证allow值为true                          
+    limitPlayTime:{
+        allow:true,
+        value:3
+    },//设置允许最大的快进时长，用于限制用户拖拽至不允许播放的时间点，使用时需保证allow值为true          
+    setMaxPlayTime:{
+        allow:false,
+        value:0
+    }       
+},function(){
+    console.log(&quot;videojs对象初始化后的回调函数&quot;);
+});
+
+//设置清晰度切换所需要的清晰度地址
+player2.player.updateSrc([
+    {
+        src: &#39;https://vjs.zencdn.net/v/oceans.mp4?SD&#39;,
+        type: &#39;video/mp4&#39;,
+        label: &#39;标清&#39;,
+        res: 360
+    },
+    {
+        src: &#39;https://vjs.zencdn.net/v/oceans.mp4?HD&#39;,
+        type: &#39;video/mp4&#39;,
+        label: &#39;高清&#39;,
+        res: 720
+    }
+]);
+//监听权限设置时长事件
+player2.player.on(player2.EVENT_TYPE.LIMIT_EVENT,function(){
+    player2.ModalDialog(false,&#39;&lt;img src=&quot;//img00.allinmd.cn/detail/video/immediatelyLogin.png&quot; style=&quot;width:100%;height:100%;&quot;&gt;&#39;);
+    player2.ModalDialogObj().fadeIn(1000);
+});
+//监听最大允许快进时长事件
+player2.player.on(player2.EVENT_TYPE.MAX_PLAY_TIME_EVENT,function(){
+    alert(&#39;你还不可以快进至此处&#39;);
+});
+
+//监听倍速切换事件
+player2.player.on(player2.EVENT_TYPE.SPEED_CHANGE_EVENT,function(){
+      console.log(&#39;当前倍速：&#39;,this.playbackRate());
+});
+</code></pre><p><h4 id="插件使用">插件使用</h4></p>
+<p><h5 id="倍速切换插件">倍速切换插件</h5></p>
+<ul>
+<li>功能说明：倍速切换插件，主要提供了在播放过程中或暂停时，切换视频的播放速率</li><li><p>使用方法：</p>
+<pre><code>  //在初始化视频播放器时，在 plugins 配置项中设置如下即可，如果不启用，则不设置
+  var player2 = new AllinmdPlayer(&#39;example_video_2&#39;, {
+          //需要使用的插件                            
+          plugins: {
+              videoJsSpeedSwitcher: {
+                  //倍速切换的 label 值
+                  menuLabel: &#39;倍速&#39;,
+                  //倍速切换菜单项，label 为菜单项的显示文本，rate 为对应的播放速率
+                  menuItems: [{label: &#39;1.0X&#39;, rate: 1}, {label: &#39;1.5X&#39;, rate: 1.5},{label: &#39;2.0X&#39;, rate: 2.0}]
+              },                         
+          }  
+      },function(){
+          console.log(&quot;videojs对象初始化后的回调函数&quot;);
+    });
+
+    //可以通过监听倍速切换事件，来对每次倍速切换时，做出相应的处理
+    player2.player.on(player2.EVENT_TYPE.SPEED_CHANGE_EVENT,function(){
+          console.log(&#39;当前倍速：&#39;,this.playbackRate());
+    });
+</code></pre></li></ul>
+<p><h5 id="清晰度切换插件">清晰度切换插件</h5></p>
+<ul>
+<li>功能说明: 清晰度切换插件，主要提供了根据不同视频源，播放不同清晰度的视频</li><li><p>使用方法：</p>
+<pre><code>  //在初始化播视频播放器是，在 plugins 配置项中设置如下即可，如果不启用，则不设置
+  var player2 = new AllinmdPlayer(&#39;example_video_2&#39;, {
+          //需要使用的插件                                
+          plugins: {               
+              videoJsResolutionSwitcher:{&quot;default&quot;: &#39;high&#39;, dynamicLabel: &quot;true&quot;}
+          }     
+      },function(){
+          console.log(&quot;videojs对象初始化后的回调函数&quot;);
+      });
+
+   //设置清晰度切换所需要的清晰度地址
+   player2.player.updateSrc([
+          {
+              src: &#39;https://vjs.zencdn.net/v/oceans.mp4?SD&#39;,
+              type: &#39;video/mp4&#39;,
+              label: &#39;标清&#39;,
+              res: 360
+          },
+          {
+              src: &#39;https://vjs.zencdn.net/v/oceans.mp4?HD&#39;,
+              type: &#39;video/mp4&#39;,
+              label: &#39;高清&#39;,
+              res: 720
+          }
+      ]);
+
+  //可以通过监听视频清晰度切换时的相关事件，来做出相应处理
+  player2.player.on(player2.EVENT_TYPE.RESOLUTION_CHANGE_EVENT,function(){
+                 console.log(&#39;当前倍速：&#39;,this.playbackRate());
+  });    
+</code></pre></li></ul>
+<p><h5 id="锚点提示插件">锚点提示插件</h5>         </p>
+<ul>
+<li>功能说明：可以通过配置，在播放器进度条上特定的时间点，打出锚点，同时当鼠标移至锚点处时，可以显示出需要显示的气泡</li><li>注意事项：<ul>
+<li>如果启用锚点提示，则需要在 text 属性中传入值，否则会显示出 &quot;undefined&quot;；</li><li>如果启用锚点提示，但不想要对应的提示值，则可以在 text 属性中设置空字符串</li><li>如果不启用锚点，则不用再 plugins 中设置</li></ul>
+</li><li><p>使用方法：</p>
+<pre><code>  var player2 = new AllinmdPlayer(&#39;example_video_2&#39;, {
+         //需要使用的插件                            
+          plugins: {
+             progress:[
+                  {
+                      time: 9,
+                      text:&#39;这里输入你想要的信息&#39;
+                  },
+                  {
+                      time: 16,
+                      text:&#39;可以为锚点输入信息&#39;
+                  },
+                  {
+                      time: 23,
+                      text:&#39;如果没有，则会显示 undefined&#39;
+                  },
+                  {
+                      time: 28
+                  },
+                  {
+                      time: 47,
+                      text:&#39;看到不写的下场了吗&#39;
+                  }                
+              ]
+          }
+      },function(){
+          console.log(&quot;videojs对象初始化后的回调函数&quot;);
+      });
+</code></pre></li></ul>
+<p><h5 id="切片播放插件">切片播放插件</h5>   </p>
+<ul>
+<li>功能说明：可以播放遵循 hls 协议的 m3u8 格式的切片流视频</li><li><p>使用方法：</p>
+<pre><code>  //如果想要当前视频播放器能够支持切片流播放，则只需要引入以下 videojs-contrib-hls.min.js 脚本即可
+  //如果当前视频播放器不需要支持切片流视频，则不可引用，否则会报错
+  //videojs-contrib-hls.min.js 需要紧跟与 video.js 文件后
+
+   &lt;!--修改过的videojs文件--&gt;
+   &lt;script type=&quot;text/javascript&quot; src=&quot;video.js&quot;&gt;&lt;/script&gt;
+   &lt;!--videojs-contrib-hls.min.js文件必须放在video.js之后--&gt;
+   &lt;script type=&quot;text/javascript&quot; src=&quot;videojs-contrib-hls.min.js&quot;&gt;&lt;/script&gt;
+   &lt;!--allinmdplayer逻辑代码--&gt;
+   &lt;script type=&quot;text/javascript&quot; src=&quot;videojs.allinmd.js&quot;&gt;&lt;/script&gt;
+</code></pre></li></ul>
+<p><h4 id="配置说明">配置说明</h4></p>
+<p><h5 id="选项">选项</h5><br>此处选项主要针对于实例化AllinmdPlayer对象时需要传入的第二个参数对象</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">选项</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">默认值</th>
+<th style="text-align:left">可选值</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">width</td>
+<td style="text-align:left">整数</td>
+<td style="text-align:left">960</td>
+<td style="text-align:left">*</td>
+<td style="text-align:left">视频对象的宽度</td>
+</tr>
+<tr>
+<td style="text-align:left">height</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">400</td>
+<td style="text-align:left">*</td>
+<td style="text-align:left">视频对象的高度</td>
+</tr>
+<tr>
+<td style="text-align:left">controls</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">true &#124; false</td>
+<td style="text-align:left">是否显示控制栏</td>
+</tr>
+<tr>
+<td style="text-align:left">preload</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">auto</td>
+<td style="text-align:left">auto &#124; meta &#124; none</td>
+<td style="text-align:left">&quot;auto&quot;当页面加载后载入整个视频,<br/>&quot;meta&quot;当页面加载后只载入元数据,<br/>&quot;none&quot;当页面加载后不载入视频,<br/>预加载模式，在有清晰度插件使用的情况下务必保证值为&quot;auto&quot;,否则IE8会无法正常切换视频源</td>
+</tr>
+<tr>
+<td style="text-align:left">poster</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">无</td>
+<td style="text-align:left">url</td>
+<td style="text-align:left">需要显示播放前的海报图</td>
+</tr>
+<tr>
+<td style="text-align:left">flash</td>
+<td style="text-align:left">object</td>
+<td style="text-align:left">videojs默认swf</td>
+<td style="text-align:left">{swf:&quot;url&quot;}</td>
+<td style="text-align:left"><strong>必填参数（H5页面不可使用）</strong> ，当使用Flash模式（IE8中或不支持video标签的浏览器）播放时，需要用到的swf地址</td>
+</tr>
+<tr>
+<td style="text-align:left">plugins</td>
+<td style="text-align:left">object</td>
+<td style="text-align:left">无</td>
+<td style="text-align:left">videoJsResolutionSwitcher &#124; progress</td>
+<td style="text-align:left"><strong>H5页面不可使用</strong> 插件选项，现有插件分别有清晰度切换，关键点显示</td>
+</tr>
+<tr>
+<td style="text-align:left">limitPlayTime</td>
+<td style="text-align:left">object</td>
+<td style="text-align:left">{allow:false,value:0}</td>
+<td style="text-align:left">allow: true &#124; false <br/> value:number</td>
+<td style="text-align:left">可播放时间权限，当需要设置时，需确保allow为true,同时传入有效value值</td>
+</tr>
+<tr>
+<td style="text-align:left">setMaxPlayTime</td>
+<td style="text-align:left">object</td>
+<td style="text-align:left">{allow:false,value:0}</td>
+<td style="text-align:left">allow: true &#124; false <br/> value:number</td>
+<td style="text-align:left"><strong>H5页面不可使用</strong> 可拖拽快进最大时间，当需要设置时，需确保allow为true,同时传入有效value值</td>
+</tr>
+<tr>
+<td style="text-align:left">isH5</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">true &#124; false</td>
+<td style="text-align:left"><strong>H5页面必填参数</strong> 是否为H5页面</td>
+</tr>
+<tr>
+<td style="text-align:left">needPausedShowBigPlayBtn</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">true &#124; false</td>
+<td style="text-align:left">设置当视频暂停时是否显示视频中间的大播放按钮</td>
+</tr>
+<tr>
+<td style="text-align:left">hotKeysOption</td>
+<td style="text-align:left">object</td>
+<td style="text-align:left">{timeValue:10,volumeValue:0.1}</td>
+<td style="text-align:left">timeValue: * <br/> volumeValue:0~1</td>
+<td style="text-align:left"><strong>需要修改时必须将两个参数都设置，否则会报错</strong> 默认设置快进/退时间为10s,参考ckplayer默认时间,如果需要关闭键盘监听事件，可参考AllinmdHotKeys插件相关的方法</td>
+</tr>
+</tbody>
+</table>
+<p><h5 id="常用方法">常用方法</h5><br>此处调用方法的对象分为两种，一种是AllinmdPlayer对象，下表中以&quot;allinmdPlayer&quot;表示，另一种是videojs的player对象，可通过&quot;allinmdPlayer.player&quot;获得，下表中也如此表示，在使用时应当注意区分</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">所属对象</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">setCanPlay(bool)</td>
+<td style="text-align:left">allinmdPlayer</td>
+<td style="text-align:left">bool为false,表示播放器当前不可以播放，为true时表示可以播放，但需要调用play()方法</td>
+</tr>
+<tr>
+<td style="text-align:left">getCanPlay()</td>
+<td style="text-align:left">allinmdPlayer</td>
+<td style="text-align:left">获取当前播放器是否可以播放，为true时，表示可以，为false时，表示不可以，如果需要播放，则可以调用setCanPlayer(bool)方法</td>
+</tr>
+<tr>
+<td style="text-align:left">setCanDragProgressBar(bool)</td>
+<td style="text-align:left">allinmdPlayer</td>
+<td style="text-align:left">bool为false时，表示播放器进度条不可拖拽，bool为true时，表示播放器进度条可以拖拽</td>
+</tr>
+<tr>
+<td style="text-align:left">getCanDragProgressBar()</td>
+<td style="text-align:left">allinmdPlayer</td>
+<td style="text-align:left">获取当前播放器是否可以进行拖拽，true表示可以，false表示不可以</td>
+</tr>
+<tr>
+<td style="text-align:left">ModalDialog(bool,domObj)</td>
+<td style="text-align:left">allinmdPlayer</td>
+<td style="text-align:left">bool为true时，显示弹窗层，domObj为需要显示的DOM对象</td>
+</tr>
+<tr>
+<td style="text-align:left">ModalDialogObj()</td>
+<td style="text-align:left">allinmdPlayer</td>
+<td style="text-align:left">返回弹窗层对象，方便对弹层进行自定义操作</td>
+</tr>
+<tr>
+<td style="text-align:left">SetControlBarShow(bool)</td>
+<td style="text-align:left">allinmdPlayer</td>
+<td style="text-align:left">bool为true时，可以显示控制条，bool为false时，控制条将隐藏</td>
+</tr>
+<tr>
+<td style="text-align:left">TurnOnPlayToPause(time)</td>
+<td style="text-align:left">allinmdPlayer</td>
+<td style="text-align:left"><strong>H5页面可考虑使用</strong> ，当无法控制H5中浏览器的video时，可以在权限设置时使用此方法，可以阻止用户正常播放</td>
+</tr>
+<tr>
+<td style="text-align:left">getCurrentTime()</td>
+<td style="text-align:left">allinmdPlayer</td>
+<td style="text-align:left">返回当前播放进度时间值，格式化后精确到秒</td>
+</tr>
+<tr>
+<td style="text-align:left">currentTime(value)</td>
+<td style="text-align:left">allinmdPlayer</td>
+<td style="text-align:left">设置当前播放进度时间值，单位为秒</td>
+</tr>
+<tr>
+<td style="text-align:left">getDurationTime()</td>
+<td style="text-align:left">allinmdPlayer</td>
+<td style="text-align:left">返回当前播放总时长，格式化后精确到秒</td>
+</tr>
+<tr>
+<td style="text-align:left">updateSrc([{src:url,type:&#39;video/mp4&#39;,label:&#39;标清&#39;,res:360}])</td>
+<td style="text-align:left">allinmdPlayer.player</td>
+<td style="text-align:left"><strong>设置清晰度，必须调用此方法</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">HideVideoElement()</td>
+<td style="text-align:left">allinmdPlayer</td>
+<td style="text-align:left">隐藏播放器的video元素 <strong>H5中建议使用</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">turnOffAllinmdHotKeys</td>
+<td style="text-align:left">allinmdPlayer</td>
+<td style="text-align:left">关闭播放器中的AllinmdHotKeys插件，默认开启</td>
+</tr>
+<tr>
+<td style="text-align:left">turnOnAllinmdHotKeys</td>
+<td style="text-align:left">allinmdPlayer</td>
+<td style="text-align:left">开启播放器中的AllinmdHotKeys插件，默认开启</td>
+</tr>
+<tr>
+<td style="text-align:left">hasTurnOnHotKeys</td>
+<td style="text-align:left">allinmdPlayer</td>
+<td style="text-align:left">判断是否已经开启播放器中的AllinmdHotKeys插件，true为开启，false为关闭</td>
+</tr>
+<tr>
+<td style="text-align:left">on(eventType,callback)</td>
+<td style="text-align:left">allinmdPlayer.player</td>
+<td style="text-align:left">videojs对象内部的事件侦听函数，在allinmdPlayer中自定义的事件也基于此方法调用</td>
+</tr>
+<tr>
+<td style="text-align:left">currentTime()</td>
+<td style="text-align:left">allinmdPlayer.player</td>
+<td style="text-align:left">videojs内部的当前播放时长，没有格式化，默认有小数</td>
+</tr>
+<tr>
+<td style="text-align:left">currentTime(value)</td>
+<td style="text-align:left">allinmdPlayer.player</td>
+<td style="text-align:left">videojs内部的设置播放器播放至value时间点</td>
+</tr>
+<tr>
+<td style="text-align:left">duration()</td>
+<td style="text-align:left">allinmdPlayer.player</td>
+<td style="text-align:left">videojs内部的播放总时长，没有格式化，默认有小数</td>
+</tr>
+<tr>
+<td style="text-align:left">paused()</td>
+<td style="text-align:left">allinmdPlayer.player</td>
+<td style="text-align:left">判断视频是否处于暂停状态，true为暂停，false为播放</td>
+</tr>
+<tr>
+<td style="text-align:left">isFullscreen()</td>
+<td style="text-align:left">allinmdPlayer.player</td>
+<td style="text-align:left">判断视频是否处于全屏状态，true为全屏状态，false为非全屏状态</td>
+</tr>
+<tr>
+<td style="text-align:left">requestFullscreen()</td>
+<td style="text-align:left">allinmdPlayer.player</td>
+<td style="text-align:left">请求进入全屏状态，需要配合用户真实的鼠标或键盘事件，不可程序模拟</td>
+</tr>
+<tr>
+<td style="text-align:left">exitFullscreen()</td>
+<td style="text-align:left">allinmdPlayer.player</td>
+<td style="text-align:left">请求退出全屏状态，可以程序直接调用 <strong>建议IE8下在退出全屏时做一个isFullscreen()的判断，防止报错</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">play()</td>
+<td style="text-align:left">allinmdPlayer.player</td>
+<td style="text-align:left">播放视频</td>
+</tr>
+<tr>
+<td style="text-align:left">pause()</td>
+<td style="text-align:left">allinmdPlayer.player</td>
+<td style="text-align:left">暂停视频</td>
+</tr>
+<tr>
+<td style="text-align:left">dispose()</td>
+<td style="text-align:left">allinmdPlayer.player</td>
+<td style="text-align:left">清理videojs对象，当逻辑代码中需要将视频相关的DOM清除时，务必保证先调用此方法将videojs对象清理，否则会出现再次生成视频对象时报错，原因为videojs内部错误</td>
+</tr>
+</tbody>
+</table>
+<p><h5 id="属性值">属性值</h5><br>处于使用方便的考虑，将AllinmdPlayer对象内部的videojs对象设置为player属性，也就是说allinmdPlayer.player即为videojs的对象。</p>
+<p><h5 id="事件">事件</h5><br>列表中所有事件相关，均由videojs对象触发并响应，即allinmdPlayer.player作为事件的发送和接收方。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">事件名称</th>
+<th style="text-align:left">事件类型</th>
+<th style="text-align:left">示例</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">LIMIT_EVENT</td>
+<td style="text-align:left">自定义</td>
+<td style="text-align:left">allinmdPlayer.player.on(allinmdPlayer.EVENT_TYPE.LIMIT_EVENT,callback)</td>
+<td style="text-align:left">当播放至初始化时设置的限定播放时长时，触发此事件</td>
+</tr>
+<tr>
+<td style="text-align:left">MAX_PLAY_TIME_EVENT</td>
+<td style="text-align:left">自定义</td>
+<td style="text-align:left">allinmdPlayer.player.on(allinmdPlayer.EVENT_TYPE.MAX_PLAY_TIME_EVENT,callback)</td>
+<td style="text-align:left">当需要拖拽播放的时间大于允许播放的最大时长时，触发此事件</td>
+</tr>
+<tr>
+<td style="text-align:left">SPEED_CHANGE_EVENT</td>
+<td style="text-align:left">自定义</td>
+<td style="text-align:left">allinmdPlayer.player.on(allinmdPlayer.EVENT_TYPE.SPEED_CHANGE_EVENT,callback)</td>
+<td style="text-align:left">当播放器的倍速发生变化时，触发此事件</td>
+</tr>
+<tr>
+<td style="text-align:left">RESOLUTION_CHANGE_EVENT</td>
+<td style="text-align:left">自定义</td>
+<td style="text-align:left">allinmdPlayer.player.on(allinmdPlayer.EVENT_TYPE.RESOLUTION_CHANGE_EVENT,callback)</td>
+<td style="text-align:left">当视频清晰度发生变化时，触发此事件</td>
+</tr>
+<tr>
+<td style="text-align:left">timeupdate</td>
+<td style="text-align:left">videojs</td>
+<td style="text-align:left">allinmdPlayer.player.on(&quot;timeupdate&quot;,callback)</td>
+<td style="text-align:left">当视频时间发生变化时，触发此事件</td>
+</tr>
+<tr>
+<td style="text-align:left">fullscreenchange</td>
+<td style="text-align:left">videojs</td>
+<td style="text-align:left">allinmdPlayer.player.on(&quot;fullscreenchange&quot;,callback)</td>
+<td style="text-align:left">当视频屏幕大小发生变化时，触发此事件</td>
+</tr>
+<tr>
+<td style="text-align:left">pause</td>
+<td style="text-align:left">videojs</td>
+<td style="text-align:left">allinmdPlayer.player.on(&quot;pause&quot;,callback)</td>
+<td style="text-align:left">当视频暂停时，触发此事件</td>
+</tr>
+<tr>
+<td style="text-align:left">play</td>
+<td style="text-align:left">videojs</td>
+<td style="text-align:left">allinmdPlayer.player.on(&quot;play&quot;,callback)</td>
+<td style="text-align:left">当视频播放时，触发此事件</td>
+</tr>
+<tr>
+<td style="text-align:left">ended</td>
+<td style="text-align:left">videojs</td>
+<td style="text-align:left">allinmdPlayer.player.on(&quot;ended&quot;,callback)</td>
+<td style="text-align:left">当视频播放结束时，触发此事件</td>
+</tr>
+</tbody>
+</table>
+<h2 id="建议">建议</h2>
+
+<p><h4 id="PC项目">PC项目</h4></p>
+<ul>
+<li>建议参考index.html页面中的相关调用方法</li><li>videojs的ie8兼容文件和我们平时构建项目时使用的comm.func.js或类似兼容ie8的公共方法有冲突，可以先引入videojs-ie8.js后引入项目的相关js文件</li><li>为了在ie8中正常使用flash播放器，需要注意页面中引入视频源的方法</li><li>为了防止ie8自动进入兼容模式，需要注意页面引入时的位置，应当在设置<meta charset="utf-8">之后</li><li>video标签的初始化写法不唯一，可以参考videojs-allinmd目录下的index.html文件中相关的使用方法</li><li>在video标签上加入屏蔽右键菜单功能，可以让普通用户无法通过右键直接视频另存为，初步减少视频源的被盗用</li><li>如果需要判断视频是否播放到某个时间点，可以结合timeupdate事件，通过获取视频当前播放时长，此时建议使用allinmdPlayer.player.currentTime()方法，获取最精确的值。因为每次的timeupdate并没有精确到秒</li><li>如果页面出现多个video,则可以考虑将它们置于数组，或自定义的视频对象控制器，通过allinmdPlayer.player.paused()来配合实现一些需求，如当前页面同时播放video数量不大于1</li><li>可以通过获取allinmdPlayer.ModalDialogObj()对象，来自定义一些弹窗层的显示效果</li><li>可以通过覆盖或增加自定义样式，来改变现有播放器中的一些样式效果</li><li>当触发了限定播放时长事件后，如果需要继续播放，请保证设置allinmdPlayer.setCanPlay(true);allinmdPlayer.setCanDragProgressBar(true);否则，拖拽进度条将无法正常使用</li><li>当使用AllinmdPlayer中切换视频插件时，如果需要设置默认播放时长，务必将allinmdPlayer.updateSrc(...)方法置于设置allinmdPlayer.player.currentTime(anyTime)之前，否则会出现设置播放时长无效</li></ul>
+<p><h4 id="H5项目">H5项目</h4></p>
+<ul>
+<li>建议参考h5-videoplayer.html页面中相关调用方法</li><li>H5页面在video标签中，应当加入&quot;playsinline&quot;、&quot;x5-video-player-fullscreen=&#39;true&#39;&quot;、&quot;x5-video-orientation=&#39;landscape&#39;&quot;、&quot;x5-video-player-type=&#39;h5&#39;&quot;属性</li><li>由于在H5页面中大部分手机浏览器会“劫持”video标签，并对其进行直接控制，所以建议不使用任何AllinmdPlayer中提供的插件</li><li>目前AllinmdPlayer插件可以实现在IOS10+、TBS&gt;=036849的苹果手机及安卓手机的播放不全屏效果，以及应用相关的H5同层播放技术</li><li>所以在上述版本的手机中，可以正常使用权限判断功能，并监听对应的事件，同时，如果不能正常弹层时，建议使用TurnOnPlayToPause(time)方法，限制非正常登陆/认证用户正常播放视频</li><li>如果在较低版本的手机中，浏览器无法正常响应AllinmdPlayer封装的方法，可以直接获取video对象，进行操作</li><li>iPad中可以正常让其访问PC端的页面，并能正常响应相关事件</li></ul>
+<p><h4 id="关于源码">关于源码</h4></p>
+<ul>
+<li>AllinmdPlayer相关的源码在videojs.allinmd.js中</li><li><p>videojs中修改的源码部分，可以通过查找以下代码注释块，进行查看所有针对videojs源码的修改部分</p>
+<pre><code>   //+++ note: AllinmdPlayer Change end.
+   //Some code for AllinmdPlayer
+   //...
+   //+++ note: AllinmdPlayer Change end.
+</code></pre></li></ul>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

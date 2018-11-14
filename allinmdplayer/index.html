@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--需要在使用AllinmdPlayer的页面加入此标签，防止IE8自动进入兼容模式，很多JS方法会不被支持-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=2, maximum-scale=2, minimum-scale=2, user-scalable=no">
+    <title>Allinmd Player v0.0.1</title>
+    <!--videojs相关样式-->
+    <link href="css/video-js.css" rel="stylesheet" type="text/css"/>
+    <!--allinmdplayer相关样式-->
+    <link href="css/videojs.allinmd.css" rel="stylesheet" type="text/css"/>
+    <!--为保证IE8下正常使用，需要引入-->
+    <script type="text/javascript" src="ie8/videojs-ie8.min.js"></script>
+    <!--修改过的videojs文件-->
+    <script type="text/javascript" src="video.js"></script>
+    <script type="text/javascript" src="lib/jquery.js"></script>
+    <!--allinmdplayer逻辑代码-->
+    <script type="text/javascript" src="videojs.allinmd.js"></script>
+    <style>
+        body {
+            background: green;
+        }
+    </style>
+</head>
+<body>
+<h1>无用的添加</h1>
+<h1>无用的添加</h1>
+<h1>无用的添加</h1>
+<video id="example_video_2" class="video-js vjs-default-skin vjs-no-flex vjs-big-play-centered"
+       oncontextmenu="return true">
+    <source src="video/oceans.mp4">
+</video>
+<h1>无用的添加</h1>
+<br><br><br><br>
+<button id="anythingBtn">万能的按键</button>
+<h1>无用的添加</h1>
+<h1>无用的添加</h1>
+<h1>无用的添加</h1>
+<h1>无用的添加</h1>
+<h1>无用的添加</h1>
+<br>
+</body>
+<script type="text/javascript">
+    //    var player1 = new AllinmdPlayer('example_video_1');
+
+
+    var player2 = new AllinmdPlayer('example_video_2', {
+        width: 640,
+        height: 264,
+        poster: "//vjs.zencdn.net/v/oceans.png",  //播放之前需要放置的海报图片
+        //IE8下使用的swf地址
+        flash: {
+            swf: 'allinmdplayer.swf'
+        },//需要使用的插件，清晰度切换(videoJsResolutionSwitcher)，关键点显示(progress)
+        plugins: {
+            videoJsSpeedSwitcher: {
+                menuLabel: '倍速',
+                menuItems: [{label: '1.0X', rate: 1}, {label: '1.5X', rate: 1.5}, {label: '2.0X', rate: 2.0}]
+            },
+            // videoJsResolutionSwitcher: {"default": 'high', dynamicLabel: "true"},
+            progress: [
+                {
+                    time: 2,
+                    text: '这里输入你想要的信息sdfasdfasdfasdfs啥地方啥地方啥地方阿斯蒂芬双方都'
+                },
+                {
+                    time: 16,
+                    text: '可以为锚点输入信息'
+                },
+                {
+                    time: 23,
+                    text: '如果没有，则会显示 undefined'
+                },
+                {
+                    time: 28
+                },
+                {
+                    time: 45,
+                    text: '这里输入你想要的信息sdfasdfasdfasdfs啥地方啥地方啥地方阿斯蒂芬双方都'
+                }
+            ]
+        },//设置播放权限时间，使用时需保证allow值为true
+        limitPlayTime: {
+            allow: false,
+            value: 3
+        },//设置允许最大的快进时长，用于限制用户拖拽至不允许播放的时间点，使用时需保证allow值为true
+        setMaxPlayTime: {
+            allow: false,
+            value: 0
+        }
+    }, function () {
+        //console.log("videojs对象初始化后的回调函数");
+    });
+    //监听倍速切换事件
+    player2.player.on(player2.EVENT_TYPE.SPEED_CHANGE_EVENT, function () {
+        console.log('当前倍速：', this.playbackRate());
+    })
+
+    $('#anythingBtn').on('click',function(){
+        // player2.player.updateSpeedByLabel('2.0X');
+        player2.player.resetSpeed();
+        console.log('当前倍速：',  player2.player.playbackRate());
+    })
+
+    //设置清晰度切换所需要的清晰度地址
+    // player2.player.updateSrc([
+    //     {
+    //         src: 'https://vjs.zencdn.net/v/oceans.mp4?SD',
+    //         type: 'video/mp4',
+    //         label: '标清',
+    //         res: 360
+    //     },
+    //     {
+    //         src: 'https://vjs.zencdn.net/v/oceans.mp4?HD',
+    //         type: 'video/mp4',
+    //         label: '高清',
+    //         res: 720
+    //     }
+    // ]);
+    //监听权限设置时长事件
+    player2.player.on(player2.EVENT_TYPE.LIMIT_EVENT, function () {
+        player2.ModalDialog(false, '<img src="//img00.allinmd.cn/detail/video/immediatelyLogin.png" style="width:100%;height:100%;">');
+        player2.ModalDialogObj().fadeIn(1000);
+    });
+    //监听最大允许快进时长事件
+    player2.player.on(player2.EVENT_TYPE.MAX_PLAY_TIME_EVENT, function () {
+        //alert('你还不可以快进至此处');
+    });
+
+    player2.player.on('timeupdate', function () {
+        var p = player2.player;
+        //console.log(p.paused(), p.isFullscreen());
+    });
+
+    player2.player.on('fullscreenchange', function () {
+        if (player2.player.isFullscreen()) {
+            //console.log("现在处于全屏状态");
+        } else {
+            //consoel.log("现在处于非全屏状态");
+        }
+    });
+
+
+</script>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--需要在使用AllinmdPlayer的页面加入此标签，防止IE8自动进入兼容模式，很多JS方法会不被支持-->
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <script src="//m.allinmd.cn/js/third-party/flexible.js"></script>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>Allinmd Player for H5 v0.0.5</title>
+    <link rel="stylesheet" href="//m.allinmd.cn/css/base.css">
+    <link rel="stylesheet" href="//m.allinmd.cn/css/pages/video/video_index.css">
+    <link rel="stylesheet" href="//m.allinmd.cn/css/pages/score/scorePage.css">
+    <link rel="stylesheet" href="//m.allinmd.cn/css/vander/swiper.min.css">
+    <link href="//m.allinmd.cn/js/third-party/photoswipe/photoswipe-master/dist/photoswipe.css" rel="stylesheet" type="text/css"/>
+    <link href="//m.allinmd.cn/js/third-party/photoswipe/photoswipe-master/dist/default-skin/default-skin-new.css" rel="stylesheet" type="text/css"/>
+    <!--videojs相关样式-->
+    <link href="css/video-js.css" rel="stylesheet" type="text/css"/>
+    <!--allinmdplayer相关样式-->
+    <link href="css/videojs.allinmd-h5.css" rel="stylesheet" type="text/css"/>
+    <!--修改过的videojs文件-->
+    <script type="text/javascript" src="video.js"></script>
+    <script type="text/javascript" src="lib/jquery.js"></script>
+    <!--allinmdplayer逻辑代码-->
+    <script type="text/javascript" src="videojs.allinmd.js"></script>
+    <style>
+        body {
+            margin: 0;
+            background: green;
+            font-size:24px;
+        }
+    </style>
+</head>
+<body>
+<!--<video id="example_video_1" class="video-js vjs-default-skin vjs-no-flex" controls preload="none"-->
+<!--oncontextmenu="return false">-->
+<!--<source src="http://vjs.zencdn.net/v/oceans.mp4" type='video/mp4'/>-->
+
+<!--</video>-->
+    <video id="example_video_2" class="video-js vjs-default-skin vjs-no-flex vjs-big-play-centered"
+           x5-video-player-type="h5"
+           x5-video-player-fullscreen="true"
+           x5-video-orientation="landscape"
+           playsinline>
+
+        <source src="video/oceans.mp4" type="video/mp4">
+    </video>
+<p id="info"></p>
+</body>
+<script type="text/javascript">
+    //    var player1 = new AllinmdPlayer('example_video_1');
+    var isIos = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+    if(isIos){
+        $('#example_video_2').attr('playsinline','playsinline');
+    }
+
+    var player2 = new AllinmdPlayer('example_video_2', {
+        width: $(window).width(),
+        height: $(window).width() * 0.56,
+        poster: "//img50.allinmd.cn/225_150.jpg",  //播放之前需要放置的海报图片
+        //IE8下使用的swf地址
+        flash: {
+            swf: 'allinmdplayer.swf'
+        },//设置播放权限时间，使用时需保证allow值为true
+        limitPlayTime: {
+            allow: false,
+            value: 300
+        },//设置允许最大的快进时长，用于限制用户拖拽至不允许播放的时间点，使用时需保证allow值为true
+        setMaxPlayTime: {
+            allow: false,
+            value: 0
+        },
+        isH5:true
+    }, function () {
+        if(isIos){
+            $('.vjs-fullscreen-control').show();
+            $('.allinmd-time-elements').css('float','left');
+        }
+    });
+    player2.player.on('timeupdate',function(){
+//        if(player2.player.currentTime()>10){
+//
+//            $('#example_video_2').children().not('.allinmd-modal-dialog').remove();
+//            player2.player.pause();
+//            exitFullscreen();
+//            player2.player.exitFullscreen();
+//            player2.ModalDialog(true, '<img id="goLogin" class="ev_needLogin" src="//img50.allinmd.cn/video_detail/notlogin.png" style="width:100%;height:100%;">');
+//        }
+    });
+    player2.player.on('ended',function(){
+
+       player2.player.exitFullscreen();
+    });
+    //监听权限设置时长事件
+//    player2.player.on(player2.EVENT_TYPE.LIMIT_EVENT, function () {
+//        player2.ModalDialog(false, '<img src="//img00.allinmd.cn/detail/video/immediatelyLogin.png" style="width:100%;height:100%;">');
+////        player2.ModalDialogObj().fadeIn(1000);
+//        player2.HideVideoElement();
+//        //player2.TurnOnPlayToPause(3);
+//
+//    });
+    function exitFullscreen(){
+        if(document.exitFullscreen){
+            document.exitFullscreen();
+        }
+        else if(document.mozCancelFullScreen){
+            document.mozCancelFullScreen();
+        }
+        else if(document.msExitFullscreen){
+            document.msExiFullscreen();
+        }
+        else if(document.webkitCancelFullScreen){
+            document.webkitCancelFullScreen();
+        }
+    }
+
+
+
+</script>
+</html>
